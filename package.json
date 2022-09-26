@@ -1,17 +1,41 @@
 {
-  "name": "redrock-lib",
+  "private": true,
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Here is a lib created by redrocker",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   },
-  "keywords": [],
-  "author": "",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write --cache --ignore-unknown"
+    ],
+    "packages/*/{src,types}/**/*.ts": [
+      "eslint --cache --fix"
+    ],
+    "packages/**/*.d.ts": [
+      "eslint --cache --fix"
+    ]
+  },
+  "keywords": [
+    "redrock",
+    "lib"
+  ],
+  "author": "NirvanaJie(Wenjie Zeng)",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^18.7.21",
     "eslint": "^8.24.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "react": "^18.2.0",
-    "typescript": "^4.8.3"
+    "rimraf": "^3.0.2",
+    "typescript": "^4.8.3",
+    "unbuild": "^0.8.11"
   }
 }

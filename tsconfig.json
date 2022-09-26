@@ -1,0 +1,28 @@
+{
+  "references": [
+    {
+      "path": "./packages/hooks"
+    },
+    {
+      "path": "./packages/ui"
+    }
+  ],
+  "files": [],
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "esnext",
+    "lib": ["esnext"],
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "paths": {
+      "@redrock-lib/hooks": ["./packages/hooks/src"],
+      "@redrock-lib/ui": ["./packages/ui/src"]
+    },
+    "composite": true
+  }
+}
